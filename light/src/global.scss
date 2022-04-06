@@ -1,0 +1,103 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+@import '~animate.css/animate.min.css';
+
+
+// all ion-con style background gradient
+ion-content {
+    //--background: linear-gradient(to bottom right, #8f2784, #0d0939);
+    --background: linear-gradient(#7da7c7,#13415f);
+}
+
+ion-toolbar {
+    --background: #12405f;
+    --color: #ffffff;
+}
+
+// .button{
+//     width: 100%; 
+//     background-color: #4e9c8e; 
+//     margin:auto; 
+//     padding-top: 18px; 
+//     padding-bottom: 18px; 
+//     color: #fff; 
+//     border-radius: 5px; 
+//     font-size: 16px;
+// }
+
+.button{
+    width: 100%; 
+    background-color: rgba(0, 0, 0, 0); 
+    border: 3px solid #12405f;
+    margin:auto; 
+    padding-top: 18px; 
+    padding-bottom: 18px; 
+    color: #12405f;
+    border-radius: 50px; 
+    font-size: 16px;
+}
+
+.text-white {
+    color: #ffffff !important;
+}
+
+.back-arrow {
+    color: #fff;
+    font-size: 30px;
+}
+
+*:focus {
+    outline: none;
+}
+
+
+/****************************************************/
+/***** @MEDIA-QUERY STYLE FOR DIFFERENT DIVICES *****/
+/****************************************************/
+
+//***** iphone 5 going down
+@media (max-height: 570px) {
+   
+}
+
+//***** iphone 5s minimum
+@media (min-height: 640px) {
+
+}
+
+//***** iphone 6/7/8
+@media (min-height: 667px) {
+
+}
+
+//***** iphone 6/7/8 plus
+@media (min-height: 731px) {
+
+}
+
+// iphone x
+@media (min-height: 800px) {
+
+}
+
+//***** ipade
+@media (min-height: 1024px) {
+
+}
+
+//***** ipade pro
+@media (min-height: 1300px) {
+
+}
+
+/***** @End Media-Query *****/
+/****************************/

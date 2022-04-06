@@ -1,0 +1,48 @@
+<ion-content>
+
+    <ion-content>
+        <ion-grid *ngIf="deviceService.components.length > 0">
+            <ion-row>
+              <ion-col size="6" *ngFor="let device of deviceService.components; let i = index" (click)="setComponent(device, i); navigate.goTo('/device-config', 'forward')">
+                <div class="animated bounceIn">
+                <div [className]="device.color">
+                  <ion-icon name="bulb" style="font-size: 30px;"></ion-icon>
+                  <br>{{ device.name }}<br><br>
+                  <span *ngIf="device.action">(On)</span>
+                  <span *ngIf="!device.action">(Off)</span>
+                  
+                </div>
+              </div>
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+    
+        <ion-grid *ngIf="deviceService.components.length == 0" style="height: 91vh;">
+          <ion-row>
+            <ion-text color="light" class="ion-text-center" style="padding-top: 50%;">
+              <p><ion-icon name="home" style="font-size:150px;"></ion-icon></p>
+              <h4>
+                  You have not added any devices as yet...
+              </h4>                      
+            </ion-text>
+          </ion-row>
+        </ion-grid>
+
+        <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+            <!-- pulse infinite slower -->
+          <ion-fab-button (click)="presentModal()" id="btnAddDevice" class="animated infinite slower" style="--background: #6a93b3">
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+
+          
+          <div style="height: 8px"></div>
+          
+          <ion-fab-button (click)="showSettings()" style="--background: #d35a0af6">
+            <ion-icon name="settings"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+
+    </ion-content>
+  
+</ion-content>
+

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-icon slot="start" name="arrow-round-back" class="back-arrow" (click)="dismiss()" ></ion-icon>
+    <ion-title text-center>
+      Add Device
+    </ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="">
+  
+    <div style="background-image: linear-gradient(to right,#12405f, #4d9696);" class="animated fadeIn">
+      <!-- <ion-card-header>
+        <ion-card-subtitle style="color: #fff;">Add Device</ion-card-subtitle>
+      </ion-card-header> -->
+  
+      <ion-card-content>
+        <ion-item style="--background: rgba(0, 0, 0, 0) !important; padding-top: 0px !important; --padding-start: 15px !important; --padding-end: 20px !important; --padding-bottom: 10px !important;">
+          <ion-label position="floating" color="#fff">Device Name</ion-label>
+          <ion-input type="text" color="#fff" [(ngModel)]="newDevice.name"></ion-input>
+        </ion-item>
+
+        <ion-item style="--background: rgba(0, 0, 0, 0) !important; padding-top: 0px !important; --padding-start: 15px !important; --padding-end: 20px !important; --padding-bottom: 10px !important;">
+          <ion-label position="floating" color="#fff">Slot</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="newDevice.pin">
+            <ion-item *ngFor="let slot of deviceService.slots; let i = index;">
+            <ion-select-option *ngIf="!slot.status"  [value]="slot.pin">Slot {{ slot.pin }}</ion-select-option>
+          </ion-item>
+            </ion-select>
+        </ion-item>
+  
+      </ion-card-content>
+    </div>
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6">
+          <button class="button" (click)="cancel()">Cancel</button>
+        </ion-col>
+        <ion-col size-md="6">
+          <button class="button" (click)="addDevice()">Add</button>
+        </ion-col>
+  
+      </ion-row>
+    </ion-grid>
+  
+  </ion-content>
+  

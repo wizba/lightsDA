@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Notifications
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div #notificationRef class="notification-card-wrapper">
+    <h4>Automated Devices</h4>
+    <div id="notList" class="notification-card animated fadeInUp delay-{{ i }}s" *ngFor="let device of trigeredDivices; let i = index;">
+        <p class="notification-card-header"><strong>{{ device.title }} - {{ device.time }}</strong> </p>
+        <p class="notification-card-content">
+        {{ device.text }}
+        </p>
+    </div>
+  </div> -->
+
+  <!-- <ion-list>
+    <ion-item-sliding >
+      <ion-item #notificationRef id="notList" class="animated fadeInUp delay-{{ i }}s" *ngFor="let device of trigeredDivices; let i = index;" style="--background: linear-gradient(to right,#12405f, #4d9696) !important; color: #fff; --inner-border-width: 0px !important;">
+        <ion-label>
+          <h2>{{ device.title }}</h2>
+          <p style="color:#fff">{{ device.text }}</p>
+          <p  style="color:#fff">{{ device.text }}</p>
+        </ion-label>
+        <ion-note slot="end" style="color:#fff">
+          {{ device.time }}
+        </ion-note>
+      </ion-item>
+  
+      <ion-item-options side="start">
+        <ion-item-option style="--background: #d35a0af6">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+  
+      <ion-item-options side="end">
+        <ion-item-option style="--background: #d35a0af6">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list> -->
+
+    
+  <ion-item-sliding id="notList" *ngFor="let device of this.notificationService.notification; let i = index;" class="bottom-border animated fadeInUp delay-1s">
+    <ion-item #notificationRef class="notification-item">
+      <ion-label>
+        <h2 class="text">{{ device.title }}</h2>
+        <p class="text">{{ device.text }}</p>
+        <p class="text">{{ device.text }}</p>
+      </ion-label>
+      <ion-note slot="end" class="text">
+        {{ device.time }}
+      </ion-note>
+    </ion-item>
+
+    <ion-item-options side="start">
+      <ion-item-option class="delete" (click)="deleteNotification(i)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+
+    <ion-item-options side="end">
+      <ion-item-option class="delete" (click)="deleteNotification(i)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="showSettings()" style="--background: #d35a0af6">
+      <ion-icon name="settings"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+    
+</ion-content>
+

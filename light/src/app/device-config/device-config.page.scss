@@ -1,0 +1,107 @@
+.backgroundcolorcolor{
+	--background: linear-gradient(#7da7c7,#13415f);
+}
+
+.itembg{
+    --background: rgba(0,0,0,0);
+    border: none !important;
+}
+
+.item-label{
+		color: #fff;
+		padding-top: 15px;
+}
+
+.text{
+	color: #fff;
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.tgl {
+	display: none;
+  
+	// add default box-sizing for this scope
+	&,
+  &:after,
+  &:before,
+	& *,
+  & *:after,
+  & *:before,
+	& + .tgl-btn {
+		box-sizing: border-box;
+		&::selection {
+			background: none;
+		}
+	}
+  
+	+ .tgl-btn {
+		outline: 0;
+		display: block;
+		width: 4em;
+		height: 2em;
+		position: relative;
+		cursor: pointer;
+    user-select: none;
+		&:after,
+    &:before {
+			position: relative;
+			display: block;
+			content: "";
+			width: 50%;
+			height: 100%;
+		}
+    
+		&:after {
+			left: 0;
+		}
+    
+		&:before {
+			display: none;
+		}
+	}
+  
+	&:checked + .tgl-btn:after {
+		left: 100%;
+	}
+}
+
+// themes
+.tgl-flat {
+	+ .tgl-btn {
+		padding: 2px;
+		transition: all .2s ease;
+		background: rgba(0,0,0,0);
+		border: 4px solid #12405f;
+		border-radius: 2em;
+		&:after {
+			transition: all .2s ease;
+			background: #12405f;
+			content: "";
+			border-radius: 1em;
+		}
+	}
+  
+	&:checked + .tgl-btn {
+    border: 4px solid #03e788f6;
+    &:after {
+      left: 50%;
+      background: #03e788f6;
+    }
+  }
+}
+
+.row-background{
+	background-image: linear-gradient(to right,#12405f, #4d9696); 
+	padding-top: 10px; 
+	padding-bottom: 10px; 
+	padding-left: 10px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
